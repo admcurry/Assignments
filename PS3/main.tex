@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\newgeometry{left=2cm,bottom=2cm, right=2cm, top=2cm}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{amssymb}
+%--------------------------------------------------------------------------------
+\title{Problem Sheet 3}
+%--------------------------------------------------------------------------------
+\begin{document}
+Probability \& Statistics Problem Sheets\\
+Adam Curry
+\vspace{3 mm}
+\hline
+\hspace{25 mm}
+
+%--------------------------------------------------------------------------------
+\begin{center}
+    \large{\noindent{\textbf{Problem Sheet 3}}}\\
+\end{center}
+%--------------------------------------------------------------------------------
+\section*{Problem 1}
+
+You work for a hedge fund which employs a number of servers to perform critical
+statistical arbitrage calculations. The probability that a server fails on a given day is 0.5\% (p = 0.005) and our hardware insurance covers the first three repairs free of cost, after that we must pay for repairs.\\
+Calculate the probability that a server lasts for a full 365-day year (or more) without incurring any hardware repair expenses.\\
+
+\textbf{Answer:}
+\begin{lstlisting}[language=R]
+noexpense <- 1 - pnbinom(365-4, 4, 0.005)
+noexpense
+\end{lstlisting}
+
+Probability = 0.8877234
+
+%--------------------------------------------------------------------------------
+\section*{Problem 2}
+
+On average we get 5.6 Hammersmith \& City trains through Stepney Green station
+every hour. \\
+Assuming the number of trains in one hour follows a Poisson distribution, calculate the probability that we get no trains in one hour.
+
+\textbf{Answer:}
+\begin{lstlisting}[language=R]
+notrains <- dpois(0, 5.6)
+notrains
+\end{lstlisting}
+
+Probability = 0.003697864
+
+%--------------------------------------------------------------------------------
+\section*{Problem 3}
+
+Let X be the outcome of rolling a die.\\
+Calculate the moment generating function of the random variable $X$, $M_X(t)$.\\
+Verify that $M_X(0) = \mathbb{E}(X^0)$ and $M′_X(0) = \mathbb{E}(X^1)$.
+
+*to complete*
+
+\end{document}
